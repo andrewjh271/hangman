@@ -1,4 +1,5 @@
 require_relative 'game'
+require_relative 'color'
 
 
 game = Game.new
@@ -6,5 +7,3 @@ game = Game.new
 until game.over?
   game.request_guess
 end
-
-puts game.key

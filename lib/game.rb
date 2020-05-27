@@ -1,3 +1,5 @@
+# require_relative 'color'
+
 class Game
 
   attr_reader :key
@@ -13,14 +15,15 @@ class Game
 
   def request_guess
     begin
-      puts @key_clues
+      puts @key_clues.cyan
+      puts
       puts "Enter a letter."
       guess = gets.chomp
       raise "Invalid input: #{guess}." unless /[[:alpha:]]/.match(guess) && guess.length == 1
       raise "You've already guessed that letter!" if @guessed.include?(guess)
       enter_guess(guess.downcase)
     rescue StandardError => e
-      puts e
+      puts "#{e}".red
       retry
     end
   end
@@ -29,19 +32,22 @@ class Game
     @guessed << char
     if @key.include?(char)
       add_clue(char)
-      puts "Good guess!"
+      puts "Good guess!".green
     else
       @guesses -= 1
-      puts "No luck! You have #{@guesses} remaining."
+      puts "No luck! You have #{@guesses} guesses remaining.".yellow
     end
   end
 
   def over?
     if @key == @key_clues
-      puts "You guessed the word!"
+      puts
+      puts "You guessed the word!".cyan
+      puts @key.cyan
       true
     elsif @guesses == 0
       puts "You couldn't guess the word!"
+      puts @key.magenta
       true
     else
       false
