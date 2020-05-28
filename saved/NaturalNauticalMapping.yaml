@@ -1,0 +1,12 @@
+--- !ruby/object:Game
+key: ethereal
+key_clues: e__e_eal
+guessed:
+- "\e[35mm\e[0m"
+- "\e[32me\e[0m"
+- "\e[32ma\e[0m"
+- "\e[35mo\e[0m"
+- "\e[35mi\e[0m"
+- "\e[32ml\e[0m"
+- "\e[35mv\e[0m"
+guesses: 6

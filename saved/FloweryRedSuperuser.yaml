@@ -1,0 +1,12 @@
+--- !ruby/object:Game
+key: mucosity
+key_clues: ___o_it_
+guessed:
+- "\e[35ma\e[0m"
+- "\e[35me\e[0m"
+- "\e[32mo\e[0m"
+- "\e[32mt\e[0m"
+- "\e[35mr\e[0m"
+- "\e[35ml\e[0m"
+- "\e[32mi\e[0m"
+guesses: 6

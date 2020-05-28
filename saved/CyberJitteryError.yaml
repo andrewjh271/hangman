@@ -1,0 +1,16 @@
+--- !ruby/object:Game
+key: objurgate
+key_clues: _b__r_ate
+guessed:
+- "\e[35mp\e[0m"
+- "\e[32me\e[0m"
+- "\e[32ma\e[0m"
+- "\e[35mm\e[0m"
+- "\e[35mn\e[0m"
+- "\e[35ms\e[0m"
+- "\e[32mt\e[0m"
+- "\e[35mc\e[0m"
+- "\e[32mr\e[0m"
+- "\e[35mi\e[0m"
+- "\e[32mb\e[0m"
+guesses: 4

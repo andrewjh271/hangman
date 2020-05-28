@@ -1,0 +1,12 @@
+--- !ruby/object:Game
+key: epilogue
+key_clues: e__l___e
+guessed:
+- "\e[32me\e[0m"
+- "\e[35ms\e[0m"
+- "\e[35mt\e[0m"
+- "\e[35mm\e[0m"
+- "\e[35ma\e[0m"
+- "\e[35mr\e[0m"
+- "\e[32ml\e[0m"
+guesses: 5

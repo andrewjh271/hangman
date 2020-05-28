@@ -1,0 +1,9 @@
+--- !ruby/object:Game
+key: centigrade
+key_clues: ce_t__r__e
+guessed:
+- "\e[32me\e[0m"
+- "\e[32mc\e[0m"
+- "\e[32mr\e[0m"
+- "\e[32mt\e[0m"
+guesses: 10

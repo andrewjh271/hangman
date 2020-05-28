@@ -1,0 +1,15 @@
+--- !ruby/object:Game
+key: girder
+key_clues: _i__e_
+guessed:
+- "\e[32mi\e[0m"
+- "\e[35ma\e[0m"
+- "\e[35mp\e[0m"
+- "\e[35mm\e[0m"
+- "\e[35mn\e[0m"
+- "\e[35ms\e[0m"
+- "\e[35ml\e[0m"
+- "\e[32me\e[0m"
+- "\e[35mb\e[0m"
+- "\e[35mt\e[0m"
+guesses: 2

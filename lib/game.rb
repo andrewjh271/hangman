@@ -1,60 +1,75 @@
-# require_relative 'color'
-
 class Game
 
-  attr_reader :key
-
   def initialize
-    @key = get_key
-    @key_scratch = @key
+    @key = generate_key
     @key_clues = ""
-    @key.length.times { @key_clues << "_" }
+    @key.length.times { @key_clues << '_' }
     @guessed = []
-    @guesses = 12
+    @guesses = 10
   end
 
   def request_guess
     begin
-      puts @key_clues.cyan
-      puts
-      puts "Enter a letter."
+      display
+      print "Enter a letter, or type save to save progress: "
       guess = gets.chomp
-      raise "Invalid input: #{guess}." unless /[[:alpha:]]/.match(guess) && guess.length == 1
-      raise "You've already guessed that letter!" if @guessed.include?(guess)
+      return 'save' if guess == 'save'
+      raise "Invalid input: #{guess}" unless /[[:alpha:]]/.match(guess) && guess.length == 1
+      raise "You've already guessed that letter!" if @guessed.include?(guess.green) ||
+                                                     @guessed.include?(guess.magenta)
       enter_guess(guess.downcase)
     rescue StandardError => e
-      puts "#{e}".red
+      puts
+      puts e.to_s.red
       retry
-    end
-  end
-
-  def enter_guess(char)
-    @guessed << char
-    if @key.include?(char)
-      add_clue(char)
-      puts "Good guess!".green
-    else
-      @guesses -= 1
-      puts "No luck! You have #{@guesses} guesses remaining.".yellow
     end
   end
 
   def over?
     if @key == @key_clues
-      puts
-      puts "You guessed the word!".cyan
+      puts "You guessed the word!".green
       puts @key.cyan
+      puts
       true
-    elsif @guesses == 0
-      puts "You couldn't guess the word!"
-      puts @key.magenta
+    elsif @guesses.zero?
+      puts "You couldn't guess the word!".magenta
+      puts @key.cyan
+      puts
       true
-    else
-      false
     end
   end
 
   private
+
+  def enter_guess(char)
+    if @key.include?(char)
+      @guessed << char.green
+      add_clue(char)
+      puts
+      puts "Good guess!".green
+    else
+      @guessed << char.magenta
+      @guesses -= 1
+      puts
+      puts "No luck!".magenta
+    end
+  end
+
+  def display
+    if @guesses < 10
+      print "Letters guessed: "
+      @guessed.each { |guess| print guess.to_s + ' ' }
+      puts
+    end
+    if @guesses > 3
+      puts "Guesses remaining: #{@guesses}".yellow
+    elsif @guesses > 1
+      puts "Guesses remaining: #{@guesses}".red
+    else
+      puts "Last chance!".red
+    end
+    puts @key_clues.cyan
+  end
 
   def add_clue(char)
     @key.split('').each_with_index do |v, i|
@@ -62,7 +77,7 @@ class Game
     end
   end
 
-  def get_key
+  def generate_key
     dictionary = File.open('5desk.txt', 'r')
     words = []
     dictionary.each_line do |l|
@@ -76,6 +91,4 @@ class Game
     dictionary.close
     words.sample
   end
-
-
 end

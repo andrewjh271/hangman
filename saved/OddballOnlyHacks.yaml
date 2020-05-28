@@ -1,0 +1,14 @@
+--- !ruby/object:Game
+key: flummery
+key_clues: __ummery
+guessed:
+- "\e[35ma\e[0m"
+- "\e[35mo\e[0m"
+- "\e[32me\e[0m"
+- "\e[32mm\e[0m"
+- "\e[35mp\e[0m"
+- "\e[35mn\e[0m"
+- "\e[32mu\e[0m"
+- "\e[32mr\e[0m"
+- "\e[32my\e[0m"
+guesses: 6

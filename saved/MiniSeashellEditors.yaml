@@ -1,0 +1,14 @@
+--- !ruby/object:Game
+key: candlestick
+key_clues: ca__le_tic_
+guessed:
+- "\e[32me\e[0m"
+- "\e[32mt\e[0m"
+- "\e[32ml\e[0m"
+- "\e[32ma\e[0m"
+- "\e[35mm\e[0m"
+- "\e[35mp\e[0m"
+- "\e[35mr\e[0m"
+- "\e[32mi\e[0m"
+- "\e[32mc\e[0m"
+guesses: 7
