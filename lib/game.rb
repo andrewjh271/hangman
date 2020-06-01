@@ -62,9 +62,9 @@ class Game
       puts
     end
     if @guesses > 3
-      puts "Guesses remaining: #{@guesses}".yellow
+      puts "Incorrect guesses remaining: #{@guesses}".yellow
     elsif @guesses > 1
-      puts "Guesses remaining: #{@guesses}".red
+      puts "Incorrect guesses remaining: #{@guesses}".red
     else
       puts "Last chance!".red
     end
